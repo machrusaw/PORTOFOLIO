@@ -18,7 +18,6 @@ README.md
 composer.lock
 package-lock.json
 yarn.lock
-bootstrap/cache/*
 tests
 coverage
 *.sqlite
