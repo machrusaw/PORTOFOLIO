@@ -1,18 +1,19 @@
 {
-       "version": 2,
-       "public": true,
-       "buildCommand": "npm run build",
-       "outputDirectory": "public",
-       "routes": [
-         { "src": "/build/(.*)", "dest": "/public/build/$1" },
-         { "src": "/api/(.*)", "dest": "/api/$1" },
-         { "src": "/(.*)", "dest": "/index.php" }
-       ],
-       "functions": {
-         "api/index.php": {
-           "runtime": "vercel-php@0.7.4"
-         }
-       },
+  "version": 2,
+  "public": true,
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "installCommand": "curl -s https://laravel-builder.vercel.app/script.sh | bash",
+  "routes": [
+    { "src": "/build/(.*)", "dest": "/public/build/$1" },
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/index.php" }
+  ],
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4"
+    }
+  },
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
