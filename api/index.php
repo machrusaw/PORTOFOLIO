@@ -1,30 +1,16 @@
 <?php
-// api/index.php - Fixed version
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require __DIR__ . '/../vendor/autoload.php';
 
+$app = require_once __DIR__ . '/../bootstrap/app.php';
+
+// Manual bootstrap tanpa config cache
 try {
-    require __DIR__ . '/../vendor/autoload.php';
+    $app->make('Illuminate\Foundation\Bootstrap\LoadConfiguration')->bootstrap($app);
+    $app->make('Illuminate\Foundation\Bootstrap\RegisterFacades')->bootstrap($app);
+    $app->make('Illuminate\Foundation\Bootstrap\RegisterProviders')->bootstrap($app);
+    $app->make('Illuminate\Foundation\Bootstrap\BootProviders')->bootstrap($app);
     
-    // Check if cached config exists, if not create it
-    $cachedConfig = __DIR__ . '/../bootstrap/cache/config.php';
-    if (!file_exists($cachedConfig)) {
-        // This will trigger config loading
-        echo "Loading fresh configuration...<br>";
-    }
-    
-    $app = require_once __DIR__ . '/../bootstrap/app.php';
-    
-    // Bind view instance manually if needed
-    if (!$app->bound('view')) {
-        $app->singleton('view', function ($app) {
-            return new \Illuminate\View\Factory(
-                $app['view.engine.resolver'],
-                $app['view.finder'],
-                $app['events']
-            );
-        });
-    }
+    echo "Manual bootstrap successful!<br>";
     
     $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
     $response = $kernel->handle(
@@ -35,8 +21,7 @@ try {
     $kernel->terminate($request, $response);
     
 } catch (Exception $e) {
-    http_response_code(500);
-    echo "<h1>Application Error</h1>";
-    echo "<p><strong>Message:</strong> " . $e->getMessage() . "</p>";
-    echo "<p>Please check that all Laravel caches are generated.</p>";
+    echo "<h1>Bootstrap Error:</h1>";
+    echo "<p>" . $e->getMessage() . "</p>";
+    echo "<pre>" . $e->getTraceAsString() . "</pre>";
 }
