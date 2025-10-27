@@ -17,5 +17,8 @@
      "dependencies": {
         "font-awesome": "^4.7.0",
         "@vercel/node": "^2.0.0"
-    }
+    },
+   "engines": {
+    "node": ">=20"
+  } 
 }
