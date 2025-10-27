@@ -1,0 +1,32 @@
+{
+       "version": 2,
+       "public": true,
+       "buildCommand": "npm run build",
+       "outputDirectory": "public",
+       "routes": [
+         { "src": "/build/(.*)", "dest": "/public/build/$1" },
+         { "src": "/api/(.*)", "dest": "/api/$1" },
+         { "src": "/(.*)", "dest": "/index.php" }
+       ],
+       "functions": {
+         "api/*.js": {
+           "runtime": "@vercel/node@0.7.4"
+         }
+       },
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://your-production-url.vercel.app",
+    "APP_KEY": "base64:TGaVaXwhWgjn9akhE4SCSIjGG/cQqvICUQ+PgLA3Bs0=",
+    "LOG_CHANNEL": "stderr",
+    "CACHE_DRIVER": "array",
+    "SESSION_DRIVER": "cookie",
+    "VIEW_COMPILED_PATH": "/tmp",
+    "DB_CONNECTION": "mysql",
+    "DB_HOST": "qsvikh.h.filess.io",
+    "DB_PORT": "3307",
+    "DB_DATABASE": "portofolio_titlestiff",
+    "DB_USERNAME": "portofolio_titlestiff",
+    "DB_PASSWORD": "5692cdbbea44d48ab37d1c580c8e95afb65e8c0e"
+  }
+}

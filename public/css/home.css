@@ -1,0 +1,409 @@
+body {
+    background-color: #ddd;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-section {
+    padding: 80px 0;
+}
+
+.hero-img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.05);
+}
+
+.social-icons a {
+    display: inline-block;
+    color: #555;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1c57d6;
+    transform: translateY(-3px);
+}
+
+.progress {
+    height: 8px;
+}
+
+.progress-bar {
+    background-color: #1c57d6;
+}
+
+
+.about-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+.about-img:hover {
+    transform: scale(1.05);
+}
+
+.progress {
+    height: 10px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    overflow: visible;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #1c57d6, #4f8cff);
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress-dot {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 3px solid #1c57d6;
+    border-radius: 50%;
+}
+/* Tambahan styling untuk bulatan di ujung progress */
+.custom-progress {
+    position: relative;
+}
+
+.custom-progress::after {
+    content: "";
+    position: absolute;
+    right: 0;   /* letakkan di ujung kanan progress */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: #1c57d6; /* warna bulatan (sesuaikan dengan warna progress) */
+    border-radius: 50%;
+    border: 2px solid #fff; /* biar ada outline putih */
+}
+
+
+.project-hover:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.card-text.small {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 300px; /* bisa disesuaikan */
+    width: 100%;
+}
+
+
+/* Testimonial card */
+/* Container testimonial */
+#testimonials {
+    /* background: linear-gradient(135deg, #f5f7fa, #e0e0e0); */
+    padding: 4rem 2rem;
+    border-radius: 1.5rem;
+}
+
+
+/* Card utama */
+.testimonial-card {
+    max-width: 750px;
+    min-height: 220px; /* tinggi minimum seragam */
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    margin: 0 auto; /* center horizontal */
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+/* Hover efek */
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+}
+
+/* Avatar */
+.testimonial-card img {
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+/* Teks utama */
+.testimonial-text {
+    font-size: 1.1rem;
+    color: #222;
+    font-style: italic;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Quote marks */
+.testimonial-text::before {
+    content: "“";
+    font-size: 2rem;
+    color: #999;
+    position: absolute;
+    left: -20px;
+    top: -10px;
+}
+.testimonial-text::after {
+    content: "”";
+    font-size: 2rem;
+    color: #999;
+    position: absolute;
+    right: -15px;
+    bottom: -10px;
+}
+
+/* Nama klien */
+.testimonial-card h5 {
+    font-weight: 600;
+    color: #111;
+}
+
+/* Role */
+.testimonial-role {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Carousel inner */
+.testimonial-carousel-inner {
+    display: flex;
+    gap: 1rem;
+    overflow: visible;
+}
+
+/* Item scaling */
+.testimonial-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100%; /* biar penuh, card di tengah */
+    text-align: center;
+}
+
+/* Item aktif */
+.testimonial-carousel-inner .active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Item sebelahnya */
+.testimonial-carousel-inner .carousel-item-next,
+.testimonial-carousel-inner .carousel-item-prev {
+    transform: scale(0.85);
+    opacity: 0.5;
+    filter: blur(1px);
+}
+
+/* Carousel control */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 100% 100%;
+    filter: invert(0.4);
+}
+
+/* Card Glassmorphism */
+.contact-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(90deg, #1c57d6, #4f8cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Modern Input */
+.modern-input {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+.modern-input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+.modern-input:focus {
+    border-color: #1c57d6;
+    box-shadow: 0 0 15px rgba(28,87,214,0.4);
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+/* Button Gradient */
+.btn-gradient {
+    background: linear-gradient(135deg, #1c57d6, #4f8cff);
+    color: #fff !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(28,87,214,0.4);
+}
+
+/* Rounded Pill Button */
+.btn-submit {
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 2.5rem 2rem;
+    }
+}
+
+
+
+/* Contact info gradient card */
+.contact-info {
+    background: linear-gradient(135deg, #1c57d6, #6610f2);
+    color: #fff;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Glassmorphism effect for form card */
+.contact-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Modern input hover effect */
+.modern-input:focus {
+    border-color: #6610f2;
+    box-shadow: 0 0 15px rgba(102, 16, 242, 0.3);
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: none; /* Awalnya disembunyikan */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-back {
+    background-color: #1c57d6; /* Warna tombol */
+    color: #fff;               /* Warna teks */
+    padding: 12px 24px;        /* Ukuran tombol lebih besar */
+    font-size: 1.1rem;         /* Ukuran teks */
+    font-weight: 600;          /* Tebal teks */
+    border-radius: 8px;        /* Membulatkan tombol */
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background-color: #155bb5; /* Warna saat hover */
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.more-project .card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.more-project .card:hover {
+    transform: translateY(-10px) scale(1.05); /* seluruh card naik dan membesar */
+    box-shadow: 0 20px 30px rgba(0,0,0,0.35); /* shadow tebal menyeluruh */
+}
+
+.more-project .card-body {
+    transition: transform 0.4s ease;
+}
+
+.more-project .card:hover .card-body {
+    transform: translateY(-5px); /* teks ikut sedikit naik */
+}
+
+
+/* Responsive: ganti arah di mobile */
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonial-card img {
+        margin: 0 0 1rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .testimonial-card img {
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+}
