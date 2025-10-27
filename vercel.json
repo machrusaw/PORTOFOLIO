@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "api/index.php",
-      "use": "@vercel/php"
+      "use": "@vercel/php@latest"
     },
     {
       "src": "public/**",
@@ -36,11 +36,8 @@
       "dest": "/api/index.php"
     }
   ],
-  "functions": {
-    "api/index.php": {
-      "runtime": "@vercel/php@latest"
-    }
-  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
