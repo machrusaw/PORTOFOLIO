@@ -1,14 +1,15 @@
 {
   "version": 2,
   "public": true,
-  "buildCommand": "npm run build && composer install --no-dev",
+  "buildCommand": "npm run build",
   "outputDirectory": "public",
   "routes": [
-    { 
-      "src": "/(.*)", 
-      "dest": "/public/index.php"
-    }
+    { "src": "/build/(.*)", "dest": "/public/build/$1" },
+    { "src": "/(.*)", "dest": "/index.php" }
   ],
+  "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.7.4" }
+    },
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
